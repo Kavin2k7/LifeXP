@@ -1,0 +1,9 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?:src|database|scripts)(?:/|$) - [F,L]
+    RewriteRule ^\.env(?:$|[./]) - [F,L]
+    RewriteRule ^api/index\.php$ - [L]
+    RewriteRule ^api(?:/.*)?$ api/index.php [QSA,L]
+</IfModule>
